@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Serif:ital@1&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Britain & Ireland Grandeur | Trafalgar</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #414042;
+      font-size: 15px;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 22px;
+      border-bottom: 1px solid rgba(235, 31, 70, 0.15);
+      padding-bottom: 6px;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      scroll-margin-top: 80px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 25px;
+      font-size: 14px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .nav a {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-right: 8px;
+      border-radius: 20px;
+      background: #f2f2f2;
+      text-decoration: none;
+      color: #414042;
+      font-size: 13px;    
+    }
+
+    .nav a:hover {
+      background: #EB1F46;
+      color: white;
+    }
+
+    .box {
+      background: #f7f9fb;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .hero-box {
+      background: rgba(255, 255, 255, 0.9);
+      color: #414042;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .hero h2 {
+      border-bottom: none;
+    }
+
+    .box ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .quote-box {
+      font-family: 'Noto Serif', serif;
+      font-style: italic;
+      background: rgba(235, 31, 70, 0.08);
+      padding: 16px;
+      border-radius: 10px;
+      margin: 30px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .button-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 10px 14px;
+      background: #EB1F46;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .button.secondary {
+      background: #f2f2f2;
+      background: #414042;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.whatsapp {
+      background: #25D366;
+    }
+
+    .button.whatsapp:hover {
+      background: #1ebe5d;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #EB1F46;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .hero {
+      background-image: url('blarney.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 20px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      border-radius: 10px;
+    }
+
+    .hero * {
+      position: relative;
+    }
+
+    .hero h1,
+    .hero h2 {
+      color: white;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .section {
+      background: #ffffff;
+      padding: 18px;
+      border: 1px solid rgba(235, 31, 70, 0.15);
+      border-radius: 12px;
+      margin: 15px 0;
+      border-left: 4px solid #EB1F46;
+    }
+
+    .section.red {
+      background: rgba(235, 31, 70, 0.08);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .section p {
+      margin: 8px 0;
+    }
+
+    .section + .section {
+      margin-top: 20px;
+    }
+
+    .flag {
+      font-size: 14px;
+      margin-right: 4px;
+     }
+
+    .intro-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .headshot {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+     }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(to right, #c51a3a);
+      margin: 30px 0;
+      border-radius: 2px;
+    }
+
+    .image-quote {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 30px 0;
+    }
+
+    .image-quote img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-quote .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4); /* dark overlay */
+    }
+
+    .image-quote .text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Noto Serif', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .image-quote .quote-author {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #888;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+@media (max-width: 600px) {
+
+  .image-quote img {
+    height: 200px;
+  }
+
+  .image-quote .text {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .headshot {
+    width: 70px;
+    height: 70px;
+  }
+
+  .button-bar {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="#before">Before You Travel</a>
+  <a href="#packing">Packing</a>
+  <a href="#connected">Staying Connected</a>
+  <a href="#pace">Tour Pace</a>
+  <a href="#money">Money</a>
+  <a href="#coach">Coach</a>
+  <a href="#hotels">Hotels</a>
+  <a href="#optionals">Optionals</a>
+  <a href="#contact">Contact</a>
+</div>
+
+
+<div class="hero">
+
+<div class="tag">
+Britain & Ireland Grandeur
+</div>
+
+
+<h2> Welcome</h2>
+<p>Hi, I’m Parri — your Travel Director for this tour.</p>
+
+<p>I congratulate you on your choice to travel with Trafalgar, and specifically on choosing the Britain & Ireland Grandeur, our biggest trip across the region, which covers ALL the highlights!</p>
+
+
+<h2>Tour Summary</h2>
+
+<div class="hero-box">
+  <ul>
+    <li><strong>Tour:</strong> Britain & Ireland Grandeur</li>
+    <li><strong>Duration:</strong> 20 days</li>
+    <li><strong>Countries:</strong> England, Wales, Ireland, Northern Ireland, Scotland</li>
+    <li><strong>Start:</strong> London</li>
+    <li><strong>Finish:</strong> London</li>
+    <li><strong>Currencies:</strong> GBP (£) and EUR (€)</li>
+    <li><strong>Style:</strong> Fast-moving highlights tour with a great mix of cities, countryside, and cultural experiences</li>
+  </ul>
+</div>
+
+</div>
+
+
+<div class="button-bar">
+
+  <a class="button whatsapp" href="https://wa.me/447521610030" target="_blank">
+    WhatsApp me
+  </a>
+
+  <a class="button secondary" href="mailto:parrigregory@gmail.com">
+    Email me
+  </a>
+
+  <a class="button secondary" href="parri-contact.vcf">
+    Save my contact
+  </a>
+
+</div>
+
+
+<div class="section">
+
+<div class="intro-header">
+  <img src="parri.jpg" alt="Parri" class="headshot">
+  <h2 id="intro">👋 A quick introduction</h2>
+</div>
+<p>I am so excited to meet you all! With ancestral roots in England and Canada, but having grown up in Australia, I previously worked as a health researcher before I caught the travel bug ... and haven’t looked back since! I have now been a European Travel Director for 11 years and can’t wait to show you some of my favourite cities in the world! I currently live in London, and I love running, music, good food and great wine, but most of all ... travel!</p>
+
+<p>Please take the time to read over the official Trafalgar Tour Itinerary which summarises the tour itinerary and includes other important information.</p>
+
+<p>This page is designed to supplement that document, and to help you feel fully prepared before you arrive. It covers additional detail on what to expect, what to pack, connectivity on tour, and a few "pro tips" from me that will make your experience smoother and more enjoyable.</p>
+
+<p>You don’t need to memorise everything here — just use it as a helpful guide in the lead-up to your trip.</p>
+
+<div class="box">
+<p><strong>💡 Pro Tip from Parri: </strong>Official Trafalgar documents (itinerary, travel documents, and emails) always take priority for confirmed timings and operational details.</p>
+</div>
+</div>
+
+
+<div class="image-quote">
+  <img src="kerry.webp" alt="Kerry">
+
+  <div class="overlay"></div>
+
+  <div class="text">
+❝  Twenty years from now you will be more disappointed by the things you didn’t do than by the ones you did do. So throw off the bowlines, sail away from the safe harbour. Catch the trade winds in your sails. Explore. Dream. Discover.  ❞
+<br>
+<span class="quote-author">-Mark Twain</span>
+  </div>
+</div>
+
+
+<div class="section red">
+
+<h2 id="before">📋 Before You Travel - Checklist</h2>
+
+<p>✅<strong>Travel documents:</strong> Ensure your passport is valid for the entire duration of your trip, and your flight booking name matches the name in your passport.</p>
+<p>✅<strong>UK ETA:</strong> The UK Government has recently introduced an Electronic Travel Authorisation (ETA) scheme for all visitors. This is a digital permission to travel and if you’re not a UK or Irish national, you are required to purchase an ETA before you travel to the UK. If this applies to you, please <a href="https://www.gov.uk/eta">visit GOV.UK</a> to finalise this before you travel.</p> 
+<p>✅<strong>Travel insurance:</strong> Ensure you have policy number and contact details handy.</p>
+<p>✅<strong>Joining details:</strong> Check your Trafalgar documents and email from me carefully, as this will outline time and place of our departure.</p>
+<p>✅<strong>Luggage tags:</strong> Ensure your suitcase is clearly labelled with your name - this will be handy for the flight over but also for identification on the first morning of tour.</p>
+</div>
+
+<div class="divider"></div>
+<div class="section">
+
+<h2 id="packing">🧳 Packing</h2>
+
+<h3>🧳 What to Pack</h3>
+<ul>
+  <li>Comfortable walking shoes that have been 'broken in' (very important as you'll be walking on cobblestones and uneven surfaces)</li>
+  <li>Comfortable, casual clothing you can layer</li>
+  <li>Light waterproof jacket</li>
+  <li>Reusable water bottle (tap water is safe throughout the tour)</li>
+  <li>Power adapter (UK and Ireland both use Type G: three rectangular pins in a triangular pattern)</li>
+  <li>Wash cloths are not provided in most hotels in the UK and Ireland, so you may like to bring your own</li>
+  <li>Optional: wired headphones with a 3.5mm jack</li>
+</ul>
+
+<div class="box">
+<p><strong>💡 Pro Tip from Parri: </strong>The UK and Ireland are known for changeable weather — sunshine, wind, and rain can all happen in the same day. Because of this, <strong>layers are key.</strong></p>
+</div>
+
+<h3>🧺 Laundry Strategy</h3>
+<p>Laundry service washes (approx. €25) are usually available to you in Killarney (Days 5-6), Dublin (Day 10-11) and Edinburgh (Days 17-18) so if you are happy to utilise one or more of these, you do not need to carry clothes for the full three weeks.</p>
+
+<div class="box">
+<p><strong>💡 Pro Tip from Parri: </strong>Believe me, most guests bring much more than they need! Travelling lighter makes everything easier.</p>
+</div>
+
+<h3>🎒 Hand Luggage</h3>
+<p>While small suitcases (ie with wheels) are appropriate as carry-on on airplanes, these bags do not fit in overhead racks on the coach. For this reason I recommend a small day bag (ie backpack, rucksack) for daily use and to carry on to the coach. Keep medications, valuables, light jacket and documents in this bag so these items are always accessible.</p>
+
+<p>While you are still welcome to bring larger carry-on / hand luggage, please note that they will be stored underneath the coach and so will NOT be accessible throughout the day (which defeats the purpose of storing items in there that you need access to regularly...)</p>
+</div>
+
+
+<div class="image-quote">
+  <img src="cliffs.webp" alt="Cliffs">
+
+  <div class="overlay"></div>
+
+  <div class="text">
+❝  When you travel, remember that a foreign country is not designed to make you comfortable. It is designed to make its own people comfortable.  ❞
+<br>
+<span class="quote-author">-Clifton Fadiman</span>
+  </div>
+</div>
+
+
+<div class="section">
+
+<h2>📅 Start of Tour</h2>
+
+<p>The tour begins in London and departs promptly on the departure morning, so please read joining information carefully. Exact meeting and departure times will be confirmed in your Trafalgar documents, and I will also send a reminder message closer to the start of the tour.</p>
+
+<div class="box">
+<p><strong>💡 Pro Tip from Parri: </strong>Please aim to arrive early — it helps everything run smoothly.</p>
+</div>
+
+</div>
+
+<div class="divider"></div>
+<div class="section">
+
+<h2 id="connected">📶 Staying Connected</h2>
+
+<h3>🌐 Wi-Fi</h3>
+<p>Wi-Fi is provided free at all hotels, at many cafes and restaurants, and often on the coach too depending on where we are travelling at the time.</p>
+
+<h3>💬 WhatsApp</h3>
+<p>I will always give reminders verbally, but to ensure the smooth flow of our travel experience, I will also distribute this key information (eg porterage times, breakfast details, departure times) via WhatsApp.</p>
+<ul>
+  <li>Download WhatsApp before you travel if you do not already use it. <a href="https://whatsapp.com/download">Download WhatsApp here</a></li>
+  <li>Set up your profile and verify your number.</li>
+  <li>Save my number in your phone with the links above.</li>
+  <li>If you are set up and you know how to use WhatsApp, feel free to send me a message to say hi. If not, no problem at all - you will still receive all key details and I can show you once we meet.</li>
+</ul>
+
+<h3>📱 eSIM (Optional)</h3>
+<p>Because Wi-fi is often available, having connectivity (mobile data) on your phone is not essential - but it does makes things much easier for you. I find that guests who have mobile data tend to be more relaxed during free time exploring cities, knowing that even without wi-fi they can access street maps, and contact each other (or me) if necessary.</p>
+
+<p>If you want to have this option, and your regular service provider doesn't provide an affordable option, a popular option is buying an eSim from <a href="https://www.airalo.com" target="_blank">Airalo</a>:</p>
+<ul>
+  <li>eSim means you leave your regular sim card in your phone, but you add a second (electronic) sim via the Airalo App.</li>
+  <li>While eSims are not available on all mobile phones, most smartphones released in roughly the last 8-9 years do have this capability.</li>
+  <li>If your phone is compatible, download "Airalo" app, create an account and browse the packages available. As an example, for 10GB of data and coverage across all of UK, Ireland and Europe for one-month, the cost is £21.</li>
+  <li>If you (or someone you know) can't set this up, I am happy to help once we meet.</li>
+</ul>
+
+<div class="box">
+<p><strong>💡 Pro Tip from Parri: </strong>On Airalo, use code <strong>TRAFALGAR10</strong> for a 10% discount.</p>
+</div>
+
+</div>
+
+
+<div class="image-quote">
+  <img src="portree.webp" alt="Portree">
+
+  <div class="overlay"></div>
+
+  <div class="text">
+❝  For my part, I travel not to go anywhere, but to go. I travel for travel’s sake. The great affair is to move.  ❞
+<br>
+<span class="quote-author">-Robert Louis Stevenson</span>
+  </div>
+</div>
+
+
+<div class="section">
+
+<h2 id="pace">🚌 Tour Pace & Expectations</h2>
+
+<p>This is a fast-moving journey covering multiple countries. On most days we depart at 8:00 or 8:30, and we often have an included dinner or night time activities that are recommended. Some days involve longer travel distances, balanced by rewarding experiences along the way.</p>
+
+<h3>🚶 Walking</h3>
+<p>There will be walking every day during our tour, sometimes on uneven surfaces, so comfortable walking shoes (rather than stylish ones!) are recommended <strong>every day</strong>.</p>
+
+<h3>👥 Travelling as a group</h3>
+<p>Being on time is very important — delays impact the whole group and the daily schedule. Touring works best when all guests are mindful of this, as well as shared spaces and different travel styles. A relaxed and respectful group dynamic makes the journey more enjoyable for all.</p>
+
+<h3>🛡️ Safety</h3>
+<p>The UK and Ireland are very safe places to live and travel but as always, please ensure that your safety (and that of your belongings) is your #1 priority. You should always take valuables with you when leaving the coach.</p>
+
+<div class="box">
+<p><strong>💡 Pro Tip from Parri: </strong>Never leave hand luggage or valuables unattended in hotel receptions, breakfast rooms, or beside the coach.</p>
+</div>
+
+<h3>⭐ Optional Experiences</h3>
+
+<p>As well as the included sightseeing, we have an exciting range of optional highlights which are designed to complement our itinerary and turn a great holiday into the trip of a lifetime. I will go over the excursions in detail at the start of the tour, and give you the chance to select which you will join us on. Optional payments can be made using Visa, MasterCard or AmEx, or cash in local currency.</p>
+</div>
+
+<div class="divider"></div>
+<div class="section">
+
+<h2 id="money">💷 Money & Currency</h2>
+<p>Note that the Pound Sterling (GBP/£) is used in England, Wales and Scotland, but in the Republic of Ireland it is the Euro (EUR/€).</p>
+
+<p>While using a credit card is handy, cash (in local currency) is useful when credit cards are not accepted – for example, lunch at small stops, payment to local street sellers, use of some restrooms and tips for local guides. I’ll always try to let you know of convenient times to use ATMs & currency exchanges (and you can exchange money at the airport on your arrival).</p>
+
+</div>
+
+
+<div class="image-quote">
+  <img src="edicastle.webp" alt="EdiCastle">
+
+  <div class="overlay"></div>
+
+  <div class="text">
+  </div>
+</div>
+
+
+<div class="section">
+
+<h2 id="coach">🚌 On the Coach</h2>
+
+<p>Trafalgar coaches are amongst the most comfortable in Europe, and the views from the coach on our travel days are absolutely fantastic! In the interest of safety, please always ensure that your seatbelt is fastened, and where possible refrain from standing while the coach is moving.</p>
+
+<h3>💺 Seat Rotation</h3>
+<p>During the tour we will use a system of seat rotation to allow everyone to enjoy the views from all parts of the coach.</p>
+
+<p>Please take great care to keep the coach as clean as possible for everybody’s comfort, and while food and drink are certainly allowed on the coach, we ask you kindly not to bring on board hot foods, hot drinks or icecream.</p>
+
+<h3>🚌 Coach Facilities</h3>
+<p>Almost all coaches have phone charging capabilities, a toilet, and wi-fi connection - but note that only has capacity for light usage (messages and emails, not streaming video), and can be unreliable in regional areas, so is not guaranteed 100% of the time.</p>
+
+</div>
+
+<div class="divider"></div>
+<div class="section">
+
+<h2 id="hotels">🏨 Hotels & Porterage</h2>
+
+<p>Across Britain and Ireland we stay in a mix of modern and historic properties. Room sizes, layouts and facilities can differ from what guests are used to elsewhere. In particular, the small, independent hotels of Scotland's Highlands and Islands are more basic than those found around the rest of the region.</p>
+
+<h3>🌀 Air Conditioning at Hotels</h3>
+<p>You will have the comfort of air-conditioning on the coach and also at most museums, restaurants and some hotels. Please note, however, that since the UK and Ireland are not known for hot weather (!) most hotels in this region do not have air conditioning. In these circumstances the hotel can provide a portable fan if required.</P>
+
+<h3>🧳 Porterage</h3>
+<p>Porterage for ONE piece of luggage is included per person. I will attach a Trafalgar luggage label to your bag on Day One, but to enable me to identify it please have your own name label on it (you should have this for the flight over anyway).</p>
+
+<div class="box">
+<p><strong>💡 Pro Tip from Parri: </strong>Because suitcase delivery can take 30 minutes, if you require toiletries or medications on arrival to hotels, carry them in your hand luggage.</p>
+</div>
+
+</div>
+
+<div class="divider"></div>
+<div class="section">
+
+<h2>🍴 Meals</h2>
+
+<p>On this tour, five dinners are included, with the remainder at your expense – Trafalgar have organized several dinners (refer to “Optional Experiences”) that we know are good value and representative of each region’s food and culture, where you may choose to join us. Breakfast is included each morning. Lunch on tour is always left up to you; quite often this will be at en route lunch stops during our travel from city to city, or during free time in a city. For all meals, please ensure that you let me know of any dietary requirements so that I may pass them on to the kitchens.</p>
+
+</div>
+
+<div class="divider"></div>
+<div class="section">
+
+<h2>💶 Gratuities</h2>
+
+<p>As in many other parts of the world, tipping is an integral part of the service industry. In bars, restaurants and taxis, a tip for good service is generally calculated at 12-15% of the bill. For all included meals, porters and chambermaids this has been covered in the cost of the tour. It is customary to show your appreciation to local experts on completion of sightseeing tours, usually £1 or €2 per person if you have enjoyed it. Further information can be found in your Trafalgar documentation regarding recommended gratuities for your Travel Director and Drivers.</p> 
+
+</div>
+
+
+<div class="image-quote">
+  <img src="hairycoo.webp" alt="HairyCoo">
+
+  <div class="overlay"></div>
+
+  <div class="text">
+❝  If you reject the food, ignore the customs, fear the religion and avoid the people, you might better stay at home.  ❞
+<br>
+<span class="quote-author">-James Michener</span>
+  </div>
+</div>
+
+
+<div class="section red">
+
+<h2 id="contact">📞 Contact & Support</h2>
+
+<p>For urgent matters before the tour, please contact Trafalgar Guest Services.</p>
+
+<p>I will be in touch closer to the start of the tour.</p>
+
+<p>During the tour, WhatsApp will be the easiest way to stay connected.</p>
+
+</div>
+
+
+<div class="button-bar">
+
+  <a class="button whatsapp" href="https://wa.me/447521610030" target="_blank">
+    WhatsApp me
+  </a>
+
+  <a class="button secondary" href="mailto:parrigregory@gmail.com">
+    Email me
+  </a>
+
+  <a class="button secondary" href="parri-contact.vcf">
+    Save my contact
+  </a>
+
+</div>
+
+
+<div class="section">
+
+<h2>🌍 Final Note</h2>
+
+<p>This is a fantastic journey through Britain and Ireland, with a huge amount to see and experience. I sincerely hope that when you return home you will recommend to your family and friends that Trafalgar is the way to go to see Europe and to make great friends along the way.</p>
+
+<p>During our time together my greatest priorities are your health and safety, and your enjoyment of the tour. You now have my phone number and email, so if there is anything I can do to help you, please don't hesitate to ask!</p>
+
+<p>I wish you safe travels to London and I look forward to meeting you there!</p>
+
+<p><strong>— Parri</strong></p>
+
+</div>
+
+<p style="font-size: 12px; color: #999;">
+  Last updated: March 2026
+</p>
+
+</body>
+</html>
